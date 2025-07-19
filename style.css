@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
+    background-color: black; /* Solid black background */
+    color: white; /* White text */
+    text-align: center;
+}
+
+.container {
+    padding: 40px;
+    border-radius: 10px;
+    /* No background or shadow needed if you want pure black */
+}
+
+#titleText {
+    font-size: 2.8em; /* Slightly larger for prominence */
+    margin-bottom: 30px;
+    letter-spacing: 1px; /* A little spacing for style */
+}
+
+.progress-bar-container {
+    width: 700px; /* Make it a bit wider for visual impact */
+    height: 50px; /* Make it taller */
+    background-color: #333; /* Dark gray for the empty part (subtly visible on black) */
+    border-radius: 25px; /* More rounded corners */
+    overflow: hidden;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Subtle white glow */
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Will be set by JavaScript */
+    background-color: white; /* Solid white for the filled part */
+    border-radius: 25px;
+    transition: width 0.7s ease-out; /* Smooth animation for progress */
+}
+
+p {
+    font-size: 1.8em; /* Larger percentage text */
+    margin-top: 30px;
+    font-weight: bold; /* Make the percentage stand out */
+}
