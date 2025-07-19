@@ -31,16 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const progress = calculateGraduationProgress();
 
-    // Set the width of the progress bar
-    progressBarFill.style.width = `${progress.toFixed(6)}%`;
+    // Set the width of the progress bar using the precise value for smoother visual progression
+    progressBarFill.style.width = `${progress}%`;
 
-    // Set the text below the bar
-    progressText.textContent = `${progress.toFixed(1)}% complete.`;
+    // Set the text below the bar, rounded to 0 decimal places (whole number)
+    progressText.textContent = `${progress.toFixed(0)}% complete.`;
 
     // Optional: Update every second if you want it to be live
     // setInterval(() => {
     //     const liveProgress = calculateGraduationProgress();
-    //     progressBarFill.style.width = `${liveProgress.toFixed(6)}%`;
-    //     progressText.textContent = `${liveProgress.toFixed(6)}% complete.`;
+    //     progressBarFill.style.width = `${liveProgress}%`;
+    //     progressText.textContent = `${liveProgress.toFixed(0)}% complete.`; // Changed to toFixed(0)
     // }, 1000); // Update every 1 second
-});
+})
