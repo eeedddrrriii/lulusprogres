@@ -3,7 +3,7 @@ function calculateGraduationProgress() {
     const startDate = new Date('2025-07-10T00:00:00'); // July 10, 2025
     const endDate = new Date('2026-04-11T23:59:59');   // April 11, 2026
 
-    const now = new Date(); // Current date and time
+    const now = new Date(); // Current date and time (e.g., July 19, 2025, 6:09:14 PM WIB)
 
     // Ensure we don't go below 0% or above 100%
     if (now < startDate) {
@@ -32,15 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = calculateGraduationProgress();
 
     // Set the width of the progress bar using the precise value for smoother visual progression
+    // We do NOT floor the value used for the bar's width, as it would make the bar jumpy.
     progressBarFill.style.width = `${progress}%`;
 
-    // Set the text below the bar, rounded to 0 decimal places (whole number)
-    progressText.textContent = `${progress.toFixed(0)}% complete.`;
+    // Set the text below the bar, explicitly rounding DOWN using Math.floor()
+    const flooredProgress = Math.floor(progress);
+    progressText.textContent = `${flooredProgress}% complete.`;
 
     // Optional: Update every second if you want it to be live
     // setInterval(() => {
     //     const liveProgress = calculateGraduationProgress();
     //     progressBarFill.style.width = `${liveProgress}%`;
-    //     progressText.textContent = `${liveProgress.toFixed(0)}% complete.`; // Changed to toFixed(0)
+    //     const flooredLiveProgress = Math.floor(liveProgress);
+    //     progressText.textContent = `${flooredLiveProgress}% complete.`;
     // }, 1000); // Update every 1 second
-})
+});
