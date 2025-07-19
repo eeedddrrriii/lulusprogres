@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBarFill.style.width = `${progress.toFixed(6)}%`;
 
     // Set the text below the bar
-    progressText.textContent = `${progress.toFixed(6)}% complete.`;
+    progressText.textContent = `${progress.toFixed(1)}% complete.`;
 
     // Optional: Update every second if you want it to be live
     // setInterval(() => {
