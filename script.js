@@ -1,9 +1,10 @@
 function calculateGraduationProgress() {
-    // Define your start and end dates
-    const startDate = new Date('2025-07-10T00:00:00'); // July 10, 2025
-    const endDate = new Date('2026-04-11T23:59:59');   // April 11, 2026
+    // Define your specific start and end dates WITH times
+    // Format: 'YYYY-MM-DDTHH:mm:ss'
+    const startDate = new Date('2025-07-10T07:30:00'); // July 10, 2025, 07:30 AM
+    const endDate = new Date('2026-04-11T09:30:00');   // April 11, 2026, 09:30 AM
 
-    const now = new Date(); // Current date and time (e.g., July 19, 2025, 6:09:14 PM WIB)
+    const now = new Date(); // Current date and time
 
     // Ensure we don't go below 0% or above 100%
     if (now < startDate) {
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = calculateGraduationProgress();
 
     // Set the width of the progress bar using the precise value for smoother visual progression
-    // We do NOT floor the value used for the bar's width, as it would make the bar jumpy.
     progressBarFill.style.width = `${progress}%`;
 
     // Set the text below the bar, explicitly rounding DOWN using Math.floor()
